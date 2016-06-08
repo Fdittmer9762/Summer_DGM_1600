@@ -8,6 +8,10 @@ public class AddFloats : MonoBehaviour {
 
 	void Start () {
 		print (Addition (A,B));
+		/*Addition(A,B);
+		if (Addition (A, B) >= 30) {
+			print (Addition (A, B));
+		}*/
 	}
 
 	float Addition (float x, float y){
