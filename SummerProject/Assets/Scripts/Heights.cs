@@ -8,14 +8,15 @@ public class Heights : MonoBehaviour {
 
 
 	void Start () {
-		SetHeight (sarah);
-		SetHeight (emma);
+		//SetHeight (sarah);  //this was how I plugged it in originally. Why doesn't this work? (maybe because I never explicitly set it as that value, but it worked with other variables)
+		//SetHeight (emma);
+		sarah = SetHeight (sarah);
+		emma = SetHeight (emma);
 		WhoIsTaller ();
 	}
 
 	float SetHeight (float height){
-		height = Random.Range (4, 6); //can't figure out why it won't change their values
-		return height;
+		return Random.Range (4f, 6f);
 	}
 
 	void WhoIsTaller (){
