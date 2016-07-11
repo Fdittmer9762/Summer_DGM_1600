@@ -5,31 +5,33 @@ public class MidtermController : MonoBehaviour {
 
 	public enum inventory {health = 100, ammo = 27, water = 73, food= 8} 
 
+	public MyPowerUps powerUps;
 	public inventory myInventory;
 	public int intOne;
 	public int intTwo;
 
 	int ChangeOperation (int x, int y){
-		int temp = 0;
 		switch (myInventory) {
 		case inventory.health:
-			print (inventory.health);
+			print (powerUps.PowerUp (x, y));
+			inventory.health = x;
 			break;
 		case inventory.ammo:
-			
+			print (powerUps.PowerUp (inventory.ammo, intTwo));
 			break;
 		case inventory.water:
-			temp = x * y;
+			print (powerUps.PowerUp (inventory.water, intTwo));
 			break;
 		case inventory.food:
-			temp = x / y;
+			print (powerUps.PowerUp (inventory.food, intTwo));
 			break;
 		default:
 			Debug.Log ("error");
 			break;
 		}
-		return temp;
 	}
 
-
+	void OnMouseDown (){
+		ChangeOperation (intOne, intTwo);
+	}
 }
